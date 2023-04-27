@@ -3,7 +3,7 @@
         "id": 1,
         "name": "Gelato",
         "image": "gelato-icon",
-        "flavor": [
+        "flavors": [
             {
                 "id": 1,
                 "name": "Dark Chocolate",
@@ -45,8 +45,7 @@
         "id": 2,
         "name": "Rolled",
         "image": "rolled-icon",
-        "description": "Italian Ice Cream, that's made with whole milk, rather than cream. This difference enhances the flavors and puts a smile on your face.",
-        "flavor": [
+        "flavors": [
             {
                 "id": 6,
                 "name": "Paan King",
@@ -88,8 +87,7 @@
         "id": 3,
         "name": "Ice Popsicle",
         "image": "popsicle-icon",
-        "description": "Italian Ice Cream, that's made with whole milk, rather than cream. This difference enhances the flavors and puts a smile on your face.",
-        "flavor": [
+        "flavors": [
             {
                 "id": 11,
                 "name": "Banana",
@@ -131,7 +129,7 @@
         "id": 4,
         "name": "Soft Serve",
         "image": "soft-icon",
-        "flavor": [
+        "flavors": [
             {
                 "id": 16,
                 "name": "Chocolate",
@@ -173,7 +171,7 @@
         "id": 5,
         "name": "Frozen Yogurt",
         "image": "yogurt-icon",
-        "flavor": [
+        "flavors": [
             {
                 "id": 21,
                 "name": "Vanilla",
@@ -215,7 +213,7 @@
         "id": 6,
         "name": "Mochi",
         "image": "mochi-icon",
-        "flavor": [
+        "flavors": [
             {
                 "id": 26,
                 "name": "Red Bean",
