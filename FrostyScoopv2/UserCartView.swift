@@ -68,7 +68,7 @@ struct UserCartView: View {
                             .font(.system(size: 20, weight: .medium))
                         
                             
-                        Text("$\(item.itemcost, specifier: "%.2f")")
+                        Text("$\(item.itemCost, specifier: "%.2f")")
                             .font(.system(size: 14))
                             .foregroundColor(.secondary)
                             

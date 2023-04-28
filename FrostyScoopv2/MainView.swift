@@ -37,6 +37,7 @@ struct MainView: View {
     var homeHeader: some View {
         HStack {
             Text("Hi, David!")
+                .font(.largeTitle)
             Spacer()
             Image(systemName: "globe")
                 .imageScale(.large)
@@ -57,6 +58,7 @@ struct MainView: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 100, height: 100)
+                                .cornerRadius(15)
                             Text(CreamType.name)
                                 .foregroundColor(.black)
                         }.padding()
@@ -82,17 +84,21 @@ struct MainView: View {
                                 Image(flavors.image)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: 250)
                                 
-                                Text(flavors.name)
-                                    
-                                    .font(.title2)
-                                Text("\(flavors.cost, specifier: "%.2f")")
+                                VStack {
+                                    Text(flavors.name)
+                                        .font(.title2)
+                                    Text("\(flavors.cost, specifier: "%.2f")")
+                                }
+                                .padding(.vertical)
+                                
                             }
-                            .foregroundColor(.black)
+
+                            .foregroundColor(.white)
                             .background(.blue)
                             .cornerRadius(20)
                         }
+                        .shadow(color: Color("FlavorCardColor"), radius: 4, x: 5, y: 15)
                         .sheet(item: $isShowingSheet) { item in
                             
                             VStack(alignment: .leading) {
@@ -109,7 +115,7 @@ struct MainView: View {
                                     Button("Add To Cart") {
                                         let uid = UUID()
 //                                        print("Adding \(item.name) to cart list.")
-                                        cartModel.EachItem?.append(CartItemModel(id: uid, itemName: item.name, itemImage: item.image, itemcost: item.cost))
+                                        cartModel.EachItem?.append(CartItemModel(id: uid, itemName: item.name, itemImage: item.image, itemCost: item.cost))
                                         
                                         print(cartModel.EachItem!)
                                     }
@@ -128,9 +134,11 @@ struct MainView: View {
                         
                     }
                 }
+                .padding(.vertical, 20)
             }
             
         }
+        
         
     }
     

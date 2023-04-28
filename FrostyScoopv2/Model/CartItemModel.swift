@@ -11,7 +11,6 @@ struct CartItemModel: Identifiable {
     var id : UUID
     var itemName: String
     var itemImage: String
-    var itemcost: Float
+    var itemCost: Float
 }
-
 
