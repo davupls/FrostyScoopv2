@@ -16,21 +16,10 @@ struct MainView: View {
         VStack {
             homeHeader
             icecreamTypes
-            
-            VStack {
-                
-                ScrollView(.horizontal) {
-                    HStack {
-                        ForEach(Array(IceCreamModel.FlavorsData[typeTracker])) { flavors in
-                            Text(flavors.name)
-                                .padding()
-                        }
-                    }
-                }
-                
-            }
-            .padding()
+            flavorsCard
+            Spacer()
         }
+        .padding()
     }
     
     
@@ -54,7 +43,7 @@ struct MainView: View {
     
     // MARK: IceCream Types Horizontal View
     var icecreamTypes: some View {
-        ScrollView(.horizontal){
+        ScrollView(.horizontal, showsIndicators: false){
             HStack{
                 ForEach(IceCreamModel.decodedIceCreamJson) { CreamType in
                     Button {
@@ -75,6 +64,31 @@ struct MainView: View {
         }
     }
     
+    //MARK: Flavors Cards View
+    var flavorsCard: some View {
+        VStack {
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 20) {
+                    ForEach(Array(IceCreamModel.FlavorsData[typeTracker])) { flavors in
+                        VStack {
+                            Image(flavors.image)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 250)
+                                
+                            Text(flavors.name)
+                                .font(.title2)
+                            Text("\(flavors.cost, specifier: "%.2f")")
+                        }
+                        .background(.blue)
+                        .cornerRadius(20)
+                    }
+                }
+            }
+            
+        }
+    }
     
     
     
