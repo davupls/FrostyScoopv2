@@ -16,10 +16,11 @@ struct MainView: View {
         VStack {
             homeHeader
             icecreamTypes
+            Spacer()
             flavorsCard
             Spacer()
         }
-        .padding()
+        .padding([.horizontal, .top])
     }
     
     
