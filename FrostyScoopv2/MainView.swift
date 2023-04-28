@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     @ObservedObject var IceCreamModel = IceCreamsViewModel()
     @State private var typeTracker = 0
+    @State private var isShowingSheet : IceCream.Flavor?
     
     
     var body: some View {
@@ -67,28 +68,65 @@ struct MainView: View {
     
     //MARK: Flavors Cards View
     var flavorsCard: some View {
+        
         VStack {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 20) {
                     ForEach(Array(IceCreamModel.FlavorsData[typeTracker])) { flavors in
-                        VStack {
-                            Image(flavors.image)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 250)
+                        Button {
+                            isShowingSheet = flavors
+                        } label: {
+                            VStack {
+                                Image(flavors.image)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 250)
                                 
-                            Text(flavors.name)
-                                .font(.title2)
-                            Text("\(flavors.cost, specifier: "%.2f")")
+                                Text(flavors.name)
+                                    
+                                    .font(.title2)
+                                Text("\(flavors.cost, specifier: "%.2f")")
+                            }
+                            .foregroundColor(.black)
+                            .background(.blue)
+                            .cornerRadius(20)
                         }
-                        .background(.blue)
-                        .cornerRadius(20)
+                        .sheet(item: $isShowingSheet) { item in
+                            
+                            VStack(alignment: .leading) {
+                                Image(item.image)
+                                    .resizable()
+                                Text(item.name)
+                                    .font(.largeTitle)
+                                Text(item.description)
+                                    .padding(.vertical)
+                                HStack {
+                                    Text("\(item.cost, specifier: "%.2f")")
+                                        .font(.title2)
+                                    Spacer()
+                                    Button("Add To Cart") {
+                                        print("Adding \(item.name) to cart list.")
+                                    }
+                                    .bold()
+                                    .frame(minWidth: 125)
+                                    .padding()
+                                    .background(.yellow)
+                                    .cornerRadius(24)
+                                    
+                                }
+                            }
+                            .padding(.horizontal)
+//                            .padding(.bottom, 30)
+                            
+                        }
+                        
                     }
                 }
             }
             
         }
+        
     }
     
     
