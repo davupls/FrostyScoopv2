@@ -11,6 +11,7 @@ struct MainView: View {
     @ObservedObject var IceCreamModel = IceCreamsViewModel()
     @State private var typeTracker = 0
     @State private var isShowingSheet : IceCream.Flavor?
+    @EnvironmentObject var cartModel : CartItemViewModel
     
     
     var body: some View {
@@ -106,7 +107,11 @@ struct MainView: View {
                                         .font(.title2)
                                     Spacer()
                                     Button("Add To Cart") {
-                                        print("Adding \(item.name) to cart list.")
+                                        let uid = UUID()
+//                                        print("Adding \(item.name) to cart list.")
+                                        cartModel.EachItem?.append(CartItemModel(id: uid, itemName: item.name, itemImage: item.image, itemcost: item.cost))
+                                        
+                                        print(cartModel.EachItem!)
                                     }
                                     .bold()
                                     .frame(minWidth: 125)
@@ -117,7 +122,7 @@ struct MainView: View {
                                 }
                             }
                             .padding(.horizontal)
-//                            .padding(.bottom, 30)
+                            .padding(.bottom)
                             
                         }
                         
@@ -156,5 +161,6 @@ struct ContentView_Previews: PreviewProvider {
     
     static var previews: some View {
         MainView()
+            .environmentObject(CartItemViewModel())
     }
 }

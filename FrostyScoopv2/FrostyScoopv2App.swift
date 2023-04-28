@@ -11,7 +11,8 @@ import SwiftUI
 struct FrostyScoopv2App: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            TabViews()
+                .environmentObject(CartItemViewModel())
         }
     }
 }

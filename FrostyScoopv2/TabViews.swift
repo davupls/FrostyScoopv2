@@ -14,7 +14,7 @@ struct TabViews: View {
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
-            Text("Cart")
+            UserCartView()
                 .tabItem {
                     Label("Cart", systemImage: "cart")
                 }
@@ -25,5 +25,6 @@ struct TabViews: View {
 struct TabViews_Previews: PreviewProvider {
     static var previews: some View {
         TabViews()
+            .environmentObject(CartItemViewModel())
     }
 }
