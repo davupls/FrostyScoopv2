@@ -7,13 +7,21 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
     @ObservedObject var IceCreamModel = IceCreamsViewModel()
     
     var body: some View {
         VStack {
             homeHeader
-         
+            ScrollView(.horizontal){
+                HStack{
+                    ForEach(IceCreamModel.decodedIceCreamJson) { CreamType in
+                        VStack {
+                            Text(CreamType.name)
+                        }.padding()
+                    }
+                }
+            }
         }
         .padding()
     }
@@ -65,6 +73,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ContentView()
+        MainView()
     }
 }

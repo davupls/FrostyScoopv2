@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		934DEFB029FB3886007C433F /* FrostyScoopv2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934DEFAF29FB3886007C433F /* FrostyScoopv2App.swift */; };
-		934DEFB229FB3886007C433F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934DEFB129FB3886007C433F /* ContentView.swift */; };
+		934DEFB229FB3886007C433F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934DEFB129FB3886007C433F /* MainView.swift */; };
 		934DEFB429FB3887007C433F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 934DEFB329FB3887007C433F /* Assets.xcassets */; };
 		934DEFB729FB3887007C433F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 934DEFB629FB3887007C433F /* Preview Assets.xcassets */; };
 		934DEFBF29FB3A0A007C433F /* icecream-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 934DEFBE29FB3A0A007C433F /* icecream-data.json */; };
@@ -19,7 +19,7 @@
 /* Begin PBXFileReference section */
 		934DEFAC29FB3886007C433F /* FrostyScoopv2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrostyScoopv2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		934DEFAF29FB3886007C433F /* FrostyScoopv2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrostyScoopv2App.swift; sourceTree = "<group>"; };
-		934DEFB129FB3886007C433F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		934DEFB129FB3886007C433F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		934DEFB329FB3887007C433F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		934DEFB629FB3887007C433F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		934DEFBE29FB3A0A007C433F /* icecream-data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "icecream-data.json"; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				934DEFAF29FB3886007C433F /* FrostyScoopv2App.swift */,
-				934DEFB129FB3886007C433F /* ContentView.swift */,
+				934DEFB129FB3886007C433F /* MainView.swift */,
 				934DEFC329FB3C6E007C433F /* ViewModel */,
 				934DEFC029FB3A67007C433F /* Model */,
 				934DEFBD29FB39C7007C433F /* json resource data */,
@@ -172,7 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				934DEFC229FB3A7F007C433F /* IceCreamModel.swift in Sources */,
-				934DEFB229FB3886007C433F /* ContentView.swift in Sources */,
+				934DEFB229FB3886007C433F /* MainView.swift in Sources */,
 				934DEFB029FB3886007C433F /* FrostyScoopv2App.swift in Sources */,
 				934DEFC529FB3CA8007C433F /* IceCreamViewModel.swift in Sources */,
 			);
