@@ -13,6 +13,7 @@ struct FrostyScoopv2App: App {
         WindowGroup {
             TabViews()
                 .environmentObject(CartItemViewModel())
+                .preferredColorScheme(.light)
         }
     }
 }
